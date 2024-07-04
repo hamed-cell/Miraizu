@@ -10,18 +10,78 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.app-bar {
-  background-color: #1976d2;
+h2 {
+  color: #0fe3ce;
+  font-size: 30px;
+  margin: 0;
+}
+
+h3 {
+  color: grey;
+  font-weight: 100;
+}
+.containerTitleIllu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 350px;
+}
+
+.textTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logoEntreprise {
+  width: 5%;
+}
+
+.containerIllustrationMain {
+  height: 350px;
+  display: flex;
+}
+
+.illustrationMain {
+  margin: 20px;
+  height: 80%;
+}
+
+.buttonInsc {
+  background-color: #0fe3ce;
   color: white;
-  padding: 10px;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 100px;
+}
+.app-bar {
+  background-color: white;
+  height: 80px;
+  align-items: center;
+  padding: 20px 30px 20px 30px;
 }
 
 .app-bar a {
   color: white;
   text-decoration: none;
   font-size: 24px;
+}
+
+.search-bar {
+  margin: 0;
+}
+
+.logo {
+  width: 90px;
 }
 
 .paper {
@@ -33,7 +93,7 @@ body {
 }
 
 .button {
-  background-color: #1976d2;
+  background-color: #0fe3ce;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -106,4 +166,10 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .containerTitleIllu {
+    flex-direction: column;
+  }
 }
