@@ -13,6 +13,10 @@ export const companies = [
   {
     id: 1,
     name: "Wild",
+    coordinates: [
+      4.92166672,
+      45.72939395
+    ],
     description:
       "Wild est une entreprise innovante dans le domaine de la technologie durable.",
     logo: Wild,
@@ -42,6 +46,10 @@ export const companies = [
   {
     id: 2,
     name: "Apple",
+    coordinates: [
+      4.90176148,
+      45.7114683
+    ],
     description:
       "Apple est une entreprise multinationale spécialisée dans la conception et la commercialisation de produits électroniques.",
     logo: Apple,

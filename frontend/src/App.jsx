@@ -9,7 +9,7 @@ import "./App.css";
 const App = () => {
 
   const location = useLocation();
-  const isHidingContent = ["/map"].includes(location.pathname) === true;
+  const isHidingContent = /^\/map\/\d+/.test(location.pathname);
   return (
     <div className="container">
       {isHidingContent === false && <header className="app-bar">

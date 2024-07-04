@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         element: <CompanyDetails />,
       },
       {
-        path: "/map",
+        path: "/map/:id",
         element: <AdressMap />,
       },
     ],
