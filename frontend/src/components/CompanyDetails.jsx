@@ -52,6 +52,7 @@ const CompanyDetails = () => {
 
   return (
     <div className="paper">
+      <img className="logoEntreprise" src={company.logo} alt="" />
       <h2>{company.name}</h2>
       <p>{company.description}</p>
       <h3>Score moyen: {getAverageScore(company.reviews)} / 5</h3>
