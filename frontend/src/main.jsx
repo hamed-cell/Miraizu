@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <Formulaire />,
       },
       {
-        path: "/",
+        path: "/company",
         element: <CompanyList />,
       },
       {
