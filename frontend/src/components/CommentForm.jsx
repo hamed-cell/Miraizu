@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box, FormControlLabel, Checkbox, FormGroup, FormLabel } from '@mui/material';
+import '../App.css';
 
 const tagsOptions = ['Arab', 'Black', 'Asian', 'LGBT', 'Women'];
 
@@ -23,31 +23,25 @@ const CommentForm = ({ companyId, addComment }) => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ marginTop: 2 }}>
-      <TextField
-        fullWidth
-        label="Commentaire"
+    <form onSubmit={handleSubmit} className="form-control">
+      <label>Commentaire</label>
+      <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
         required
-        multiline
         rows={4}
-        sx={{ marginBottom: 2 }}
       />
-      <FormLabel component="legend">Tags</FormLabel>
-      <FormGroup row>
+      <label>Tags</label>
+      <div className="checkbox-group">
         {tagsOptions.map((tag) => (
-          <FormControlLabel
-            control={<Checkbox checked={tags.includes(tag)} onChange={handleTagChange} name={tag} />}
-            label={tag}
-            key={tag}
-          />
+          <label key={tag}>
+            <input type="checkbox" checked={tags.includes(tag)} onChange={handleTagChange} name={tag} />
+            {tag}
+          </label>
         ))}
-      </FormGroup>
-      <Button type="submit" variant="contained" color="primary" sx={{ marginTop: 2 }}>
-        Ajouter Commentaire
-      </Button>
-    </Box>
+      </div>
+      <button type="submit" className="button">Ajouter Commentaire</button>
+    </form>
   );
 };
 

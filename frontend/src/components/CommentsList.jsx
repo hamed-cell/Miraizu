@@ -1,20 +1,16 @@
 import React from 'react';
-import { Card, CardContent, Typography, Box } from '@mui/material';
+import '../App.css';
 
 const CommentsList = ({ comments = [] }) => {
   return (
-    <Box>
+    <div>
       {comments.map((comment) => (
-        <Card key={comment.id} sx={{ marginBottom: 2 }}>
-          <CardContent>
-            <Typography variant="body1">{comment.text}</Typography>
-            <Typography variant="body2" color="textSecondary">
-              Tags: {comment.tags.join(', ')}
-            </Typography>
-          </CardContent>
-        </Card>
+        <div key={comment.id} className="comment-card">
+          <p>{comment.text}</p>
+          <p>Tags: {comment.tags.join(', ')}</p>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 };
 

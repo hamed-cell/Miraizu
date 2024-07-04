@@ -1,39 +1,17 @@
-
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Container, AppBar, Toolbar, Typography, Button, CssBaseline } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-});
-
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            <Button component={Link} to="/" color="inherit">
-              ミライズ (MiraiZu)
-            </Button>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Container sx={{ mt: 4 }}>
+    <div className="container">
+      <header className="app-bar">
+        <Link to="/">ミライズ (MiraiZu)</Link>
+      </header>
+      <main>
         <Outlet />
-      </Container>
-    </ThemeProvider>
+      </main>
+    </div>
   );
 };
 

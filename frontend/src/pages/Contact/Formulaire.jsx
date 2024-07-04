@@ -13,7 +13,7 @@ export default function Formulaire() {
     prenom: "",
     nom: "",
     email: "",
-    password: "",
+    numero: "",
     message: "",
   });
 
@@ -29,35 +29,34 @@ export default function Formulaire() {
   };
 
   return (
-    <div>
-      <div>
-        <p>Informations de contact</p>
-        <p>
-          Vous êtes un professsionnel et vous souhaitez appraitre sur notre sute
-          ?
-        </p>
-        <img src={Phone} alt="" />
-        <p>+10123456 789</p>
-        <img src={Email} alt="" />
-        <p>miraizu@gmail.com</p>
-        <img src={Location} alt="" />
-        <p>132 dartmouth street Boston,Massachusetts 02156 United States</p>
-        <img src={Twitter} alt="" />
-        <img src={Instagram} alt="" />
-        <img src={Discord} alt="" />
+    <div className={styles.container}>
+      <div className={styles.contactInfo}>
+        <h2>Informations de contact</h2>
+        <p>Vous êtes un professionnel et vous souhaitez apparaître sur notre site ?</p>
+        <div className={styles.contactDetail}>
+          <img src={Phone} alt="Phone" />
+          <p>+10123456 789</p>
+        </div>
+        <div className={styles.contactDetail}>
+          <img src={Email} alt="Email" />
+          <p>miraizu@gmail.com</p>
+        </div>
+        <div className={styles.contactDetail}>
+          <img src={Location} alt="Location" />
+          <p>132 Dartmouth Street, Boston, Massachusetts 02156, United States</p>
+        </div>
+        <div className={styles.socialIcons}>
+          <img src={Twitter} alt="Twitter" />
+          <img src={Instagram} alt="Instagram" />
+          <img src={Discord} alt="Discord" />
+        </div>
       </div>
 
-      <Form
-        method="post"
-        className={styles.contactForm}
-        onSubmit={handleSubmit}
-      >
-        <label htmlFor="prènom" className={styles.rowFormRow}>
-          <p className={styles.titleForm}>Prènom</p>
-        </label>
-        <div className={styles.pseudoInput}>
+      <Form method="post" className={styles.contactForm} onSubmit={handleSubmit}>
+        <div className={styles.formGroup}>
+          <label htmlFor="prenom" className={styles.formLabel}>Prénom</label>
           <input
-            className={styles.textInput}
+            className={styles.formInput}
             type="text"
             placeholder="Taro"
             name="prenom"
@@ -65,24 +64,21 @@ export default function Formulaire() {
             onChange={handleInput}
           />
         </div>
-        <label htmlFor="nom" className={styles.rowFormRow}>
-          <p className={styles.titleForm}>Nom</p>
-        </label>
-        <div className={styles.pseudoInput}>
+        <div className={styles.formGroup}>
+          <label htmlFor="nom" className={styles.formLabel}>Nom</label>
           <input
-            className={styles.textInput}
+            className={styles.formInput}
             type="text"
-            placeholder="miraizu"
+            placeholder="Miraizu"
             name="nom"
             value={values.nom}
             onChange={handleInput}
           />
         </div>
-        <label htmlFor="email" className={styles.rowFormRow}>
-          <p className={styles.titleForm}>Adresse email</p>
-        </label>
-        <div className={styles.pseudoInput}>
+        <div className={styles.formGroup}>
+          <label htmlFor="email" className={styles.formLabel}>Adresse email</label>
           <input
+            className={styles.formInput}
             type="email"
             placeholder="taro.mail@gmail.com"
             name="email"
@@ -90,32 +86,29 @@ export default function Formulaire() {
             onChange={handleInput}
           />
         </div>
-        <label htmlFor="numero" className={styles.rowFormRow}>
-          <p className={styles.titleForm}>Numéro de téléphone</p>
-        </label>
-        <div className={styles.pseudoInput}>
+        <div className={styles.formGroup}>
+          <label htmlFor="numero" className={styles.formLabel}>Numéro de téléphone</label>
           <input
-            type="numero"
+            className={styles.formInput}
+            type="text"
             placeholder="12345678"
             name="numero"
             value={values.numero}
             onChange={handleInput}
           />
         </div>
-        <label htmlFor="commentaire" className={styles.rowFormRow}>
-          <p className={styles.titleForm}>commentaire</p>
-        </label>
-        <div className={styles.pseudoInput}>
-          <input
-            type="text"
-            placeholder="saisissez votre message"
+        <div className={styles.formGroup}>
+          <label htmlFor="commentaire" className={styles.formLabel}>Commentaire</label>
+          <textarea
+            className={styles.formTextarea}
+            placeholder="Saisissez votre message"
             name="message"
             value={values.message}
             onChange={handleInput}
           />
         </div>
         <button className={styles.buttonSubmit} type="submit">
-          <p className={styles.inscriptionButton}>Envoyer votre message</p>
+          Envoyer votre message
         </button>
       </Form>
     </div>
