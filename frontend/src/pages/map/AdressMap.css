@@ -1,0 +1,11 @@
+/* Add these styles to your AdressMap.css file */
+
+#map {
+  width: 100%;
+  height: 100vh;
+  cursor: grab;
+}
+
+#map:active {
+  cursor: grabbing;
+}
