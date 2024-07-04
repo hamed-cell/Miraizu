@@ -1,19 +1,23 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import React from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import AdressMap from './pages/map/AdressMap';
 // eslint-disable-next-line import/no-unresolved
 import Illustration from "./assets/illustration.png";
 import Logo from "./assets/logo.png";
 import "./App.css";
 
-function App() {
+const App = () => {
+
+  const location = useLocation();
+  const isHidingContent = ["/map"].includes(location.pathname) === true;
   return (
     <div className="container">
-      <header className="app-bar">
+      {isHidingContent === false && <header className="app-bar">
         <Link to="/">
           <img className="logo" src={Logo} alt="" />
         </Link>
-      </header>
-      <div className="containerTitleIllu">
+      </header>}
+      {isHidingContent === false && <div className="containerTitleIllu">
         <div className="textTitle">
           <h1>LES ENTREPRISES</h1>
           <h2>Notées sur l’inclusion</h2>
@@ -25,10 +29,11 @@ function App() {
         <div className="containerIllustrationMain">
           <img className="illustrationMain" src={Illustration} alt="" />
         </div>
-      </div>
-      <main>
+      </div>}
+      {isHidingContent === false && <main>
         <Outlet />
-      </main>
+      </main>}
+      {isHidingContent === true && <AdressMap/>}
     </div>
   );
 }
