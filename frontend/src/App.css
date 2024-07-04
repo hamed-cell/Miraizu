@@ -64,16 +64,35 @@ h3 {
   width: 100px;
 }
 .app-bar {
+  display: flex;
   background-color: white;
-  height: 80px;
+  height: 165px;
   align-items: center;
   padding: 20px 30px 20px 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .app-bar a {
   color: white;
   text-decoration: none;
   font-size: 24px;
+}
+
+.app-bar ul {
+  list-style: none;
+}
+
+.app-bar li {
+  text-align: center;
+  color: black;
+  font-size: 65%;
+}
+
+.app-bar button {
+  text-align: center;
+  margin: 1rem;
 }
 
 .search-bar {

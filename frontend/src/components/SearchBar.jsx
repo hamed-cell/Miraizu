@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './SearchBar.css';
+import React, { useState } from "react";
+import "./SearchBar.css";
 
 const SearchBar = ({ companies, setFilteredCompanies }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -11,7 +11,7 @@ const SearchBar = ({ companies, setFilteredCompanies }) => {
   };
 
   const filterCompanies = (value) => {
-    const filtered = companies.filter(company =>
+    const filtered = companies.filter((company) =>
       company.name.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredCompanies(filtered);

@@ -4,7 +4,12 @@ export const getRandomCoordinates = () => {
   const randomIndex = Math.floor(Math.random() * jardinsData.length);
   const target = jardinsData[randomIndex];
 
-  if (target && target.coordinates && Array.isArray(target.coordinates) && target.coordinates.length === 2) {
+  if (
+    target &&
+    target.coordinates &&
+    Array.isArray(target.coordinates) &&
+    target.coordinates.length === 2
+  ) {
     const [lng, lat] = target.coordinates;
     if (!isNaN(lng) && !isNaN(lat)) {
       return {
@@ -12,7 +17,7 @@ export const getRandomCoordinates = () => {
         lat,
         name: target.nom,
         address: target.adresse,
-        commune: target.commune
+        commune: target.commune,
       };
     }
   }
