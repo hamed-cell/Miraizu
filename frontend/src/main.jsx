@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Formulaire from "./pages/Contact/Formulaire";
-
 import App from "./App";
+import CompanyList from "./components/CompanyList";
+import CompanyDetails from "./components/CompanyDetails";
+import Formulaire from "./pages/Contact/Formulaire";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Formulaire />,
+      },
+      {
+        path: "/",
+        element: <CompanyList />,
+      },
+      {
+        path: "/company/:id",
+        element: <CompanyDetails />,
       },
     ],
   },
