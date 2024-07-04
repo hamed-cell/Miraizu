@@ -24,8 +24,8 @@ function Inscription() {
 
   return (
     <div className={styles.inscriptionContent}>
-      <h2>Join our community</h2>
-      <p>Sign in or Create a new accont with us.</p>
+      <h2>Rejoignez notre communauté</h2>
+      <p>Connectez-vous ou créez votre compte</p>
       <Form
         method="post"
         className={styles.inscriptionForm}
