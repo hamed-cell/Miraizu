@@ -11,6 +11,7 @@ import "./App.css";
 
 function App() {
   const location = useLocation();
+  const isHidingHomePage = ["/"].includes(location.pathname);
   const isHidingContent = /^\/map\/\d+/.test(location.pathname);
   return (
     <div className="container">
@@ -23,7 +24,7 @@ function App() {
         </header>
       )}
 
-      {isHidingContent === false && (
+      {isHidingContent === false && isHidingHomePage === true && (
         <div className="containerTitleIllu">
           <div className="textTitle">
             <h1>LES ENTREPRISES</h1>
@@ -38,9 +39,12 @@ function App() {
           </div>
         </div>
       )}
-      <div className="peopleContent">
-        <img className="people" src={People} alt="" />
-      </div>
+      {isHidingContent === false && isHidingHomePage === true && (
+        <div className="peopleContent">
+          <img className="people" src={People} alt="" />
+        </div>
+      )}
+
       {isHidingContent === false && (
         <main>
           <Outlet />
