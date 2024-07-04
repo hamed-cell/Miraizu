@@ -70,7 +70,7 @@ const CompanyDetails = () => {
         Score moyen: {getAverageScore(company.reviews)} / 5 ⭐
       </h3>
       {company.reviews.map((review, index) => (
-        <div key={index} className="card">
+        <div key={index} className="card2">
           <p>
             {review.category}:{" "}
             <span className="scoreMoyen">
