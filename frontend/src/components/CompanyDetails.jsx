@@ -59,7 +59,7 @@ const CompanyDetails = () => {
           <h2>{company.name}</h2>
           <p>{company.description}</p>
         </div>
-        <Link to="/">
+        <Link to={`/map/${id}`}>
           <div className="itineraire">
             <img className="itineraireImg" src={Itineraire} alt="" />
             <p>Itinéraire</p>
