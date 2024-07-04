@@ -19,10 +19,14 @@ export default function Navbar() {
       <form>
         <input type="text" placeholder="Recherche" />
       </form>
-      <button className={styles.navbarButton} type="submit">
-        Login
-      </button>
-      <button type="submit">S'inscrire</button>
+      <Link to="/connexion">
+        <button className={styles.navbarButton} type="submit">
+          Login
+        </button>
+      </Link>
+      <Link to="/inscription">
+        <button type="submit">S'inscrire</button>
+      </Link>
     </div>
   );
 }
