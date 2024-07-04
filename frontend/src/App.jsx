@@ -33,7 +33,7 @@ const App = () => {
       {isHidingContent === false && <main>
         <Outlet />
       </main>}
-      <AdressMap/>
+      {isHidingContent === true && <AdressMap/>}
     </div>
   );
 }
