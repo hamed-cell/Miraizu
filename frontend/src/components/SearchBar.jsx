@@ -1,22 +1,32 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import './SearchBar.css';
 
-export default function SearchBar() {
-  const [searchInput, setSearchInput] = useState("");
+const SearchBar = ({ companies, setFilteredCompanies }) => {
+  const [query, setQuery] = useState('');
 
-  const handleChange = (event) => {
-    event.preventDefault();
-    setSearchInput(event.target.value);
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    setQuery(value);
+    filterCompanies(value);
+  };
+
+  const filterCompanies = (value) => {
+    const filtered = companies.filter(company =>
+      company.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilteredCompanies(filtered);
   };
 
   return (
-    <>
-      <label htmlFor="search">Votre recherche : </label>
+    <div className="search-bar">
       <input
         type="text"
-        placeholder="Votre recherche"
-        onChange={handleChange}
-        value={searchInput}
+        placeholder="Rechercher une entreprise..."
+        value={query}
+        onChange={handleInputChange}
       />
-    </>
+    </div>
   );
-}
+};
+
+export default SearchBar;
