@@ -11,8 +11,12 @@ import Wild from "../assets/wild.png";
 
 export const companies = [
   {
-    id: 1,
+    id: 0,
     name: "Wild",
+    coordinates: [
+      4.8269787,
+      45.7463242
+    ],
     description:
       "Wild est une entreprise innovante dans le domaine de la technologie durable.",
     logo: Wild,
@@ -40,8 +44,12 @@ export const companies = [
     ],
   },
   {
-    id: 2,
+    id: 1,
     name: "Apple",
+    coordinates: [
+      -122.0322895,
+      37.3228934
+    ],
     description:
       "Apple est une entreprise multinationale spécialisée dans la conception et la commercialisation de produits électroniques.",
     logo: Apple,
@@ -69,9 +77,13 @@ export const companies = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     name: "Spotify",
     description: "Spotify est une entreprise de service de streaming musical.",
+    coordinates: [
+      2.3324033,
+      48.8798846
+    ],
     logo: Spotify,
     reviews: [
       { category: "Arab", rating: 5 },
@@ -89,11 +101,15 @@ export const companies = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     name: "Amazon",
     description:
       "Amazon est une entreprise de commerce électronique et de services cloud.",
     logo: Amazon,
+    coordinates: [
+      2.3118584156036377,
+      48.9040641784668
+    ],
     reviews: [
       { category: "Arab", rating: 2 },
       { category: "Black", rating: 3 },
@@ -118,8 +134,12 @@ export const companies = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     name: "Adobe",
+    coordinates: [
+      -121.8947723,
+      37.3294709
+    ],
     description:
       "Adobe est une entreprise de logiciels spécialisée dans les produits multimédias et de créativité.",
     logo: Adobe,
@@ -151,8 +171,12 @@ export const companies = [
     ],
   },
   {
-    id: 6,
+    id: 5,
     name: "Google",
+    coordinates: [
+      -122.084614,
+      37.4217636
+    ],
     description:
       "Google est une entreprise technologique multinationale spécialisée dans les services et produits liés à Internet.",
     logo: Google,
@@ -172,8 +196,12 @@ export const companies = [
     ],
   },
   {
-    id: 7,
+    id: 6,
     name: "Microsoft",
+    coordinates: [
+      2.2646596431732178,
+      48.833900451660156
+    ],
     description:
       "Microsoft est une entreprise multinationale américaine d’informatique et de micro-informatique.",
     logo: Microsoft,
@@ -193,8 +221,12 @@ export const companies = [
     ],
   },
   {
-    id: 8,
+    id: 7,
     name: "Facebook",
+    coordinates: [
+      -122.177992,
+      37.4519671
+    ],
     description:
       "Facebook est une entreprise américaine qui détient le réseau social éponyme.",
     logo: Facebook,
@@ -214,8 +246,12 @@ export const companies = [
     ],
   },
   {
-    id: 9,
+    id: 8,
     name: "Twitter",
+    coordinates: [
+      2.3311419,
+      48.8689953
+    ],
     description: "Twitter est une entreprise américaine de microblogage.",
     logo: Twitter,
     reviews: [
@@ -234,8 +270,12 @@ export const companies = [
     ],
   },
   {
-    id: 10,
+    id: 9,
     name: "Netflix",
+    coordinates: [
+      2.3291903,
+      48.8712233
+    ],
     description:
       "Netflix est une entreprise américaine proposant des films et séries télévisées en flux continu sur Internet.",
     logo: Netflix,

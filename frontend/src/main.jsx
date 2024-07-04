@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <Inscription />,
       },
       {
-        path: "/map",
+        path: "/map/:id",
         element: <AdressMap />,
       },
     ],

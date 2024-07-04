@@ -1,14 +1,16 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
+import { useParams, Link } from "react-router-dom";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./AdressMap.css";
 import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getRandomCoordinates } from "./randomCoordinates"; // Importez la fonction depuis le fichier
+import { getCoordinates } from "./getCoordinates"; // Importez la fonction depuis le fichier
 
 function AdressMap() {
+  const { id } = useParams();
   mapboxgl.accessToken =
-    "pk.eyJ1IjoiaGFtZWQxMiIsImEiOiJjbHc5MGh3d2YyYTltMnFweXNhZHgwYWw2In0.AVp8L6FfnEg_r8aRl6Qffw";
+    "pk.eyJ1IjoiY2FjYTEyMzQiLCJhIjoiY2x5N2NpOGNiMDU0bzJpczc0djB0NzVsaCJ9.DWNbM7W4ta-HbcGPMK7qbA";
 
   const [map, setMap] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
@@ -19,54 +21,11 @@ function AdressMap() {
 
   const hasShownWelcomeToasts = useRef(false); // Use ref to track if welcome toasts have been shown
 
-  const encouragement = [
-    "Tu es capable de grandes choses.",
-    "Ne baisse jamais les bras.",
-    "Chaque effort compte.",
-    "Tu es plus fort(e) que tu ne le penses.",
-    "Continue d'avancer, tu es sur la bonne voie.",
-    "Les échecs sont des leçons déguisées.",
-    "Tu as tout ce qu'il faut pour réussir.",
-    "La persévérance paie toujours.",
-    "Crois en toi et en tes capacités.",
-    "Chaque jour est une nouvelle opportunité.",
-    "Ne te compare pas aux autres, avance à ton rythme.",
-    "Les petits progrès mènent à de grandes réussites.",
-    "Tu es une source d'inspiration.",
-    "Ne laisse jamais le doute t'arrêter.",
-    "Rien n'est impossible avec de la détermination.",
-    "Tu es en train de devenir la meilleure version de toi-même.",
-    "Le chemin peut être difficile, mais il en vaut la peine.",
-    "Tu es sur la bonne route, continue d'avancer.",
-    "N'oublie pas de célébrer chaque victoire, aussi petite soit-elle.",
-    "Tu es plus près de ton objectif que tu ne le crois.",
-    "T'es vraiment sur le fuseau horaire du décalage horaire, même pour une tortue.",
-    "Si la lenteur était un sport olympique, tu serais un champion du monde.",
-    "Tu prends ton temps comme si le temps était illimité.",
-    "Même les escargots se demandent pourquoi tu vas si lentement.",
-    "T'as déjà pensé à louer un escargot pour accélérer un peu les choses ?",
-    "Ton horloge biologique doit être sur pause permanente.",
-    "Je ne suis pas sûr(e) si tu marches ou si tu as juste oublié comment courir.",
-    "Le monde tourne à la vitesse de la lumière, et toi tu es là, à la vitesse d'une tortue asthmatique.",
-    "Si tu avais été un super-héros, tu aurais été 'Captain Lenteur'.",
-    "Tu vas tellement lentement que même les molécules te dépassent.",
-    "Je vais appeler la NASA, ils pourraient avoir besoin de toi pour ralentir certaines de leurs missions.",
-    "Les cinq minutes avec toi, c'est comme un voyage dans un trou noir, le temps s'étire à l'infini.",
-    "J'ai demandé à une plante de te suivre, elle m'a dit qu'elle avait mieux à faire.",
-    "T'es tellement lent(e) que les gens te passent en marchant.",
-    "J'ai vu des glaciers bouger plus vite que toi.",
-    "Les tortues te prennent en photo pour se rappeler ce qu'est la lenteur.",
-    "Ton concept de 'rapidité' est un peu flou, non ?",
-    "Si tu participais à une course, les gens auraient le temps de se marier, de fonder une famille et de prendre leur retraite avant que tu arrives à la ligne d'arrivée.",
-    "Même les GIFs de chargement te trouvent lent(e).",
-    "Quand tu dis 'bientôt', les gens prévoient en fait pour l'année prochaine.",
-  ];
-
   const toastTimeouts = useRef([]);
 
   useEffect(() => {
     if (!hasShownWelcomeToasts.current) {
-      toast.info("Bienvenue dans Va toucher de l'herbe !", {
+      toast.info("En route pour ton entretien", {
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
@@ -78,7 +37,7 @@ function AdressMap() {
       });
 
       toast.info(
-        "Prêt à découvrir de nouveaux endroits et à toucher de l'herbe ?",
+        "Allez tu vas tout déchirer , ce poste est à toi !",
         {
           position: "top-center",
           autoClose: 3000,
@@ -163,18 +122,9 @@ function AdressMap() {
 
   const setRandomTargetLocation = (map) => {
     clearAllTimeouts(); // Clear existing timeouts
-    const target = getRandomCoordinates();
+    const target = getCoordinates();
     if (target) {
-      const { lng, lat, name, address } = target;
-
-      const displayAddress = address ? address : "Lyon";
-
-      toast.info(`Vous allez toucher de l'herbe à ${name}, ${displayAddress}`, {
-        position: "top-center",
-        autoClose: false,
-        closeOnClick: true,
-        draggable: true,
-      });
+      const { lng, lat, name } = target;
 
       if (targetMarker) {
         targetMarker
@@ -224,36 +174,10 @@ function AdressMap() {
             duration: 3000, // Shorter duration for returning to user location
             essential: true,
           });
-
-          setQuestMessage(
-            `Vous allez toucher de l'herbe à ${name}, ${displayAddress}`
-          );
         }
       }, 6000); // Reduced delay before returning to user location
 
       getRoute([lng, lat]);
-
-      const initialDelay = 10000;
-      const interval = 6000;
-      encouragement.forEach((message, index) => {
-        const timeout = setTimeout(
-          () => {
-            toast(message, {
-              position: "bottom-center",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-              transition: Slide,
-            });
-          },
-          initialDelay + index * interval
-        );
-        toastTimeouts.current.push(timeout);
-      });
     } else {
       console.error("Invalid coordinates");
     }
@@ -361,7 +285,7 @@ function AdressMap() {
             cursor: "pointer",
           }}
         >
-          Nouvel objectif
+          Commencez la navigation
         </button>
         <button
           onClick={centerOnUserLocation}
@@ -376,6 +300,19 @@ function AdressMap() {
         >
           Centrer
         </button>
+        <Link to={`/company/${id}`}>
+        <button
+           style={{
+            padding: "10px 20px",
+            backgroundColor: "#FF0000",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}>
+            X
+        </button>
+        </Link>
       </div>
       {questMessage && (
         <div className="quest-widget">
