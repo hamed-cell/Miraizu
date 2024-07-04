@@ -4,6 +4,7 @@ import { companies } from "../data/companies";
 import CommentsList from "./CommentsList.jsx";
 import CommentForm from "./CommentForm.jsx";
 import "../App.css";
+import Itineraire from "../assets/itineraire.png";
 
 const getAverageScore = (reviews) => {
   const total = reviews.reduce((sum, review) => sum + review.rating, 0);
@@ -52,14 +53,29 @@ const CompanyDetails = () => {
 
   return (
     <div className="paper">
-      <img className="logoEntreprise" src={company.logo} alt="" />
-      <h2>{company.name}</h2>
-      <p>{company.description}</p>
-      <h3>Score moyen: {getAverageScore(company.reviews)} / 5</h3>
+      <div className="blogLogoEntreprise">
+        <img className="logoEntreprise" src={company.logo} alt="" />
+        <div className="nameDescription">
+          <h2>{company.name}</h2>
+          <p>{company.description}</p>
+        </div>
+        <Link to="/">
+          <div className="itineraire">
+            <img className="itineraireImg" src={Itineraire} alt="" />
+            <p>Itinéraire</p>
+          </div>
+        </Link>
+      </div>
+      <h3 className="scoreMoyen">
+        Score moyen: {getAverageScore(company.reviews)} / 5 ⭐
+      </h3>
       {company.reviews.map((review, index) => (
         <div key={index} className="card">
           <p>
-            {review.category}: <strong>{review.rating} / 5</strong>
+            {review.category}:{" "}
+            <span className="scoreMoyen">
+              <strong>{review.rating} / 5</strong>
+            </span>
           </p>
         </div>
       ))}

@@ -13,6 +13,7 @@ function App() {
   const isHidingContent = ["/map"].includes(location.pathname) === true;
   return (
     <div className="container">
+
       {isHidingContent === false && (
         <header className="app-bar">
           <Link to="/">
@@ -35,6 +36,7 @@ function App() {
           <div className="containerIllustrationMain">
             <img className="illustrationMain" src={Illustration} alt="" />
           </div>
+
         </div>
       )}
       {isHidingContent === false && (
