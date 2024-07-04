@@ -5,7 +5,8 @@ import App from "./App";
 import CompanyList from "./components/CompanyList";
 import CompanyDetails from "./components/CompanyDetails";
 import Formulaire from "./pages/Contact/Formulaire";
-import Inscription from "./pages/inscription/Inscription.jsx";
+import AdressMap from "./pages/map/AdressMap";
+import Inscription from "./pages/inscription/Inscription";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/company/:id",
         element: <CompanyDetails />,
+      },
+      {
+        path: "/map",
+        element: <AdressMap />,
       },
       {
         path: "/inscription",
