@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
+import { useParams, Link } from "react-router-dom";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./AdressMap.css";
@@ -7,8 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { getCoordinates } from "./getCoordinates"; // Importez la fonction depuis le fichier
 
 function AdressMap() {
+  const { id } = useParams();
   mapboxgl.accessToken =
-    "pk.eyJ1IjoiaGFtZWQxMiIsImEiOiJjbHc5MGh3d2YyYTltMnFweXNhZHgwYWw2In0.AVp8L6FfnEg_r8aRl6Qffw";
+    "pk.eyJ1IjoiY2FjYTEyMzQiLCJhIjoiY2x5N2NpOGNiMDU0bzJpczc0djB0NzVsaCJ9.DWNbM7W4ta-HbcGPMK7qbA";
 
   const [map, setMap] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
@@ -298,6 +300,19 @@ function AdressMap() {
         >
           Centrer
         </button>
+        <Link to={`/company/${id}`}>
+        <button
+           style={{
+            padding: "10px 20px",
+            backgroundColor: "#FF0000",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}>
+            X
+        </button>
+        </Link>
       </div>
       {questMessage && (
         <div className="quest-widget">
