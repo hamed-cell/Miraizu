@@ -1,5 +1,4 @@
-/* eslint-disable padded-blocks */
-// eslint-disable-next-line import/prefer-default-export
+
 export const companies = [
   {
     id: 1,

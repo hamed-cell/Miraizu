@@ -1,82 +1,109 @@
+/* App.css */
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #ffffff;
-  color: #4a4a4a;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
 }
 
-.app {
-  text-align: center;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.header {
-  background-color: #4a90e2;
-  padding: 20px;
+.app-bar {
+  background-color: #1976d2;
   color: white;
+  padding: 10px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-.company-list,
-.company-details {
-  padding: 20px;
-}
-
-.company-list ul,
-.company-details ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.company-list li,
-.company-details li {
-  margin: 10px 0;
-}
-
-.company-list a,
-.company-details a {
+.app-bar a {
+  color: white;
   text-decoration: none;
-  color: #4a90e2;
+  font-size: 24px;
 }
 
-.company-list a:hover,
-.company-details a:hover {
-  text-decoration: underline;
+.paper {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-form {
-  margin-top: 20px;
+.button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-form div {
+.button:hover {
+  background-color: #145a8a;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card p {
+  color: #757575;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 
-form label {
-  display: block;
+.form-control label {
   margin-bottom: 5px;
 }
 
-form input,
-form textarea {
-  width: 100%;
+.form-control input,
+.form-control select,
+.form-control textarea {
   padding: 8px;
-  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-form button {
-  padding: 10px 15px;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  cursor: pointer;
+.checkbox-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-form button:hover {
-  background-color: #357abd;
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.comment-card {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
