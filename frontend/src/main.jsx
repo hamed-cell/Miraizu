@@ -5,9 +5,9 @@ import App from "./App";
 import CompanyList from "./components/CompanyList";
 import CompanyDetails from "./components/CompanyDetails";
 import Formulaire from "./pages/Contact/Formulaire";
-import Inscription from "./pages/inscription/Inscription.jsx";
+import Inscription from "./pages/inscription/Inscription";
 import AdressMap from "./pages/map/AdressMap";
-import Connexion from "./pages/connexion/Connexion.jsx";
+import Connexion from "./pages/connexion/Connexion";
 
 const router = createBrowserRouter([
   {

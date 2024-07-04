@@ -7,7 +7,7 @@ export default function Navbar() {
     <div className={styles.navbarContainer}>
       <ul className={styles.navbarContents}>
         <Link to="/">
-          <li>Home</li>
+          <li>Accueil</li>
         </Link>
         <Link to="/company">
           <li>Entreprise</li>
@@ -21,7 +21,7 @@ export default function Navbar() {
       </form>
       <Link to="/connexion">
         <button className={styles.navbarButton} type="submit">
-          Login
+          Se connecter
         </button>
       </Link>
       <Link to="/inscription">

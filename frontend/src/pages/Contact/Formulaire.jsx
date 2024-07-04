@@ -32,22 +32,28 @@ export default function Formulaire() {
     <div>
       <div className={styles.contactContainerAll}>
         <div className={styles.formulaireContact}>
-          <h3>Informations de contact</h3>
+          <h2 className={styles.informationsContact}>
+            Informations de contact
+          </h2>
           <p>
             Vous êtes un professionnel et vous souhaitez apparaître sur notre
             site ?
           </p>
-
-          <img src={Phone} alt="Phone" />
-          <p>+10123456 789</p>
-
-          <img src={Email} alt="Email" />
-          <p>miraizu@gmail.com</p>
-
-          <img src={Location} alt="Location" />
-          <p>
-            132 Dartmouth Street, Boston, Massachusetts 02156, United States
-          </p>
+          <div className={styles.flexContactContent}>
+            <div className={styles.flexContact2}>
+              <img src={Phone} alt="Phone" />
+              <p>+33 456 687 135</p>
+            </div>
+            <div className={styles.flexContact2}>
+              <img src={Email} alt="Email" />
+              <p>miraizu@gmail.com</p>
+            </div>
+            <div className={styles.flexContact2}>
+              <img src={Location} alt="Location" />
+              <p>132 Dartmouth Street, Boston,</p>
+              <p>Massachusetts 02156, United States</p>
+            </div>
+          </div>
           <div className={styles.socialIcons}>
             <img src={Twitter} alt="Twitter" />
             <img src={Instagram} alt="Instagram" />
@@ -61,7 +67,7 @@ export default function Formulaire() {
           onSubmit={handleSubmit}
         >
           <label htmlFor="prènom" className={styles.rowFormRow}>
-            <p className={styles.titleForm}>Prènom</p>
+            <p className={styles.titleForm}>Prenom</p>
           </label>
           <div className={styles.pseudoInput}>
             <input
@@ -80,7 +86,7 @@ export default function Formulaire() {
             <input
               className={styles.textInput}
               type="text"
-              placeholder="miraizu"
+              placeholder="Miraizu"
               name="nom"
               value={values.nom}
               onChange={handleInput}
@@ -111,12 +117,12 @@ export default function Formulaire() {
             />
           </div>
           <label htmlFor="commentaire" className={styles.rowFormRow}>
-            <p className={styles.titleForm}>commentaire</p>
+            <p className={styles.titleForm}>Message</p>
           </label>
           <div className={styles.pseudoInput}>
             <input
               type="text"
-              placeholder="saisissez votre message"
+              placeholder="Saisissez votre message"
               name="message"
               value={values.message}
               onChange={handleInput}

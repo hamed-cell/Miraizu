@@ -56,7 +56,7 @@ const CompanyList = () => {
             <option value="Women Friendly">Women Friendly</option>
           </select>
         </div>
-        <div>
+        <div className="croissant">
           <button className="button" onClick={() => setSortOrder("asc")}>
             Croissant
           </button>
@@ -65,7 +65,7 @@ const CompanyList = () => {
           </button>
         </div>
       </div>
-      <div>
+      <div className="cardContent">
         {filteredCompanies.map((company) => (
           <div key={company.id} className="card">
             <Link to={`/company/${company.id}`}>

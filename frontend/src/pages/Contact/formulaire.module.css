@@ -3,7 +3,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   background-color: rgb(15, 227, 206);
@@ -80,6 +80,10 @@ input {
   align-items: center;
 }
 
+.socialIcons img {
+  width: 10%;
+}
+
 .contactButton {
   display: flex;
   flex-direction: column;
@@ -103,6 +107,21 @@ input {
   transition: background-color 0.3s;
 }
 
+.flexContact {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+.flexContact img {
+  width: 10%;
+}
+
+.flexContactContent {
+  display: flex;
+  flex-direction: column;
+}
+
 .buttonSubmit:hover {
   background-color: #0056b3;
 }
@@ -117,12 +136,21 @@ input {
   flex-direction: column;
   text-align: center;
 }
+
+.buttonSubmit p {
+  color: white;
+}
+
+.informationsContact {
+  color: white;
+  margin-top: 20px;
+}
 @media only screen and (min-width: 700px) {
   .contactContainerAll {
     padding: 2rem;
     flex-direction: row;
-    border: solid 1px;
-    box-shadow: 0px 1px 12px 4px grey;
+
+    box-shadow: 0px 1px 5px 2px grey;
     margin: 1rem;
     border-radius: 10px;
     justify-content: space-around;
