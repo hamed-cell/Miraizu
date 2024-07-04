@@ -19,7 +19,9 @@ export default function Navbar() {
       <form>
         <input type="text" placeholder="Recherche" />
       </form>
-      <button className={styles.navbarButton} type="submit">Login</button>
+      <button className={styles.navbarButton} type="submit">
+        Login
+      </button>
       <button type="submit">S'inscrire</button>
     </div>
   );
