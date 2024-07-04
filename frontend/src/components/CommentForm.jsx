@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
-import '../App.css';
+import React, { useState } from "react";
+import "../App.css";
 
-const tagsOptions = ['Arab', 'Black', 'Asian', 'LGBT', 'Women'];
+const tagsOptions = ["Arab", "Black", "Asian", "LGBT", "Women"];
 
-const CommentForm = ({ companyId, addComment }) => {
-  const [text, setText] = useState('');
+function CommentForm({ companyId, addComment }) {
+  const [text, setText] = useState("");
   const [tags, setTags] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const newComment = { id: Date.now(), text, tags };
     addComment(newComment);
-    setText('');
+    setText("");
     setTags([]);
   };
 
   const handleTagChange = (event) => {
     const value = event.target.name;
     setTags((prevTags) =>
-      prevTags.includes(value) ? prevTags.filter((tag) => tag !== value) : [...prevTags, value]
+      prevTags.includes(value)
+        ? prevTags.filter((tag) => tag !== value)
+        : [...prevTags, value]
     );
   };
 
@@ -35,14 +37,21 @@ const CommentForm = ({ companyId, addComment }) => {
       <div className="checkbox-group">
         {tagsOptions.map((tag) => (
           <label key={tag}>
-            <input type="checkbox" checked={tags.includes(tag)} onChange={handleTagChange} name={tag} />
+            <input
+              type="checkbox"
+              checked={tags.includes(tag)}
+              onChange={handleTagChange}
+              name={tag}
+            />
             {tag}
           </label>
         ))}
       </div>
-      <button type="submit" className="button">Ajouter Commentaire</button>
+      <button type="submit" className="button">
+        Ajouter Commentaire
+      </button>
     </form>
   );
-};
+}
 
 export default CommentForm;
