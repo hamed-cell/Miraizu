@@ -1,23 +1,29 @@
-
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { Container, AppBar, Toolbar, Typography, Button, CssBaseline } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import './App.css';
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import {
+  Container,
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  CssBaseline,
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Footer from "./components/Footer";
+import "./App.css";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: "#1976d2",
     },
     secondary: {
-      main: '#dc004e',
+      main: "#dc004e",
     },
   },
 });
 
-
-const App = () => {
+function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -32,9 +38,10 @@ const App = () => {
       </AppBar>
       <Container sx={{ mt: 4 }}>
         <Outlet />
+        <Footer />
       </Container>
     </ThemeProvider>
   );
-};
+}
 
 export default App;

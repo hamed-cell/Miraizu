@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: #ffffff;
   color: #4a4a4a;
   margin: 0;
@@ -22,25 +22,30 @@ body {
   font-size: 2em;
 }
 
-.company-list, .company-details {
+.company-list,
+.company-details {
   padding: 20px;
 }
 
-.company-list ul, .company-details ul {
+.company-list ul,
+.company-details ul {
   list-style-type: none;
   padding: 0;
 }
 
-.company-list li, .company-details li {
+.company-list li,
+.company-details li {
   margin: 10px 0;
 }
 
-.company-list a, .company-details a {
+.company-list a,
+.company-details a {
   text-decoration: none;
   color: #4a90e2;
 }
 
-.company-list a:hover, .company-details a:hover {
+.company-list a:hover,
+.company-details a:hover {
   text-decoration: underline;
 }
 
@@ -57,7 +62,8 @@ form label {
   margin-bottom: 5px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;

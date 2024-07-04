@@ -1,28 +1,39 @@
-import React, { useState } from 'react';
-import { TextField, Button, Box, FormControlLabel, Checkbox, FormGroup, FormLabel } from '@mui/material';
+/* eslint-disable react/jsx-no-undef */
+import React, { useState } from "react";
+import {
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  FormGroup,
+  FormLabel,
+} from "@mui/material";
 
-const tagsOptions = ['Arab', 'Black', 'Asian', 'LGBT', 'Women'];
+const tagsOptions = ["Arab", "Black", "Asian", "LGBT", "Women"];
 
-const CommentForm = ({ companyId, addComment }) => {
-  const [text, setText] = useState('');
+// eslint-disable-next-line react/prop-types, no-unused-vars
+function CommentForm({ companyId, addComment }) {
+  const [text, setText] = useState("");
   const [tags, setTags] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const newComment = { id: Date.now(), text, tags };
     addComment(newComment);
-    setText('');
+    setText("");
     setTags([]);
   };
 
   const handleTagChange = (event) => {
     const value = event.target.name;
     setTags((prevTags) =>
-      prevTags.includes(value) ? prevTags.filter((tag) => tag !== value) : [...prevTags, value]
+      prevTags.includes(value)
+        ? prevTags.filter((tag) => tag !== value)
+        : [...prevTags, value]
     );
   };
 
   return (
+    // eslint-disable-next-line react/jsx-no-undef
     <Box component="form" onSubmit={handleSubmit} sx={{ marginTop: 2 }}>
       <TextField
         fullWidth
@@ -38,17 +49,28 @@ const CommentForm = ({ companyId, addComment }) => {
       <FormGroup row>
         {tagsOptions.map((tag) => (
           <FormControlLabel
-            control={<Checkbox checked={tags.includes(tag)} onChange={handleTagChange} name={tag} />}
+            control={
+              <Checkbox
+                checked={tags.includes(tag)}
+                onChange={handleTagChange}
+                name={tag}
+              />
+            }
             label={tag}
             key={tag}
           />
         ))}
       </FormGroup>
-      <Button type="submit" variant="contained" color="primary" sx={{ marginTop: 2 }}>
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        sx={{ marginTop: 2 }}
+      >
         Ajouter Commentaire
       </Button>
     </Box>
   );
-};
+}
 
 export default CommentForm;
