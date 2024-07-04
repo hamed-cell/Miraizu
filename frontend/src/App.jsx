@@ -2,6 +2,8 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 // eslint-disable-next-line import/no-unresolved
 import Illustration from "./assets/illustration.png";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Logo from "./assets/logo.png";
 import "./App.css";
 
@@ -13,6 +15,7 @@ function App() {
           <img className="logo" src={Logo} alt="" />
         </Link>
       </header>
+      <Navbar />
       <div className="containerTitleIllu">
         <div className="textTitle">
           <h1>LES ENTREPRISES</h1>
@@ -29,6 +32,7 @@ function App() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }
