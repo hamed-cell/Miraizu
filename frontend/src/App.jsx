@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="container">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <header className="app-bar">
         <Link to="/">
           <img className="logo" src={Logo} alt="" />
@@ -28,6 +29,9 @@ function App() {
             S'inscrire
           </button>
 =======
+=======
+
+>>>>>>> f4d3dfcca79bfcd0f430ec6d8c45a7d8cb4b3bee
       {isHidingContent === false && (
         <header className="app-bar">
           <Link to="/">
@@ -50,7 +54,11 @@ function App() {
           <div className="containerIllustrationMain">
             <img className="illustrationMain" src={Illustration} alt="" />
           </div>
+<<<<<<< HEAD
 >>>>>>> 64c4d5ebfcca94d428669e2db335411a08912c32
+=======
+
+>>>>>>> f4d3dfcca79bfcd0f430ec6d8c45a7d8cb4b3bee
         </div>
       )}
       {isHidingContent === false && (
