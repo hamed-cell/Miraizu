@@ -14,8 +14,9 @@ function App() {
         <Link to="/">
           <img className="logo" src={Logo} alt="" />
         </Link>
+        <Navbar />
       </header>
-      <Navbar />
+
       <div className="containerTitleIllu">
         <div className="textTitle">
           <h1>LES ENTREPRISES</h1>

@@ -1,0 +1,36 @@
+.navbarContainer button {
+  background-color: #0fe3ce;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.navbarContents ul {
+  padding: none;
+}
+
+.navbarContainer li {
+  margin: 1rem;
+}
+
+.navbarContainer .navbarButton {
+  color: #0fe3ce;
+  background-color: #dee3ed;
+}
+
+@media only screen and (min-width: 700px) {
+  .navbarContainer button {
+    height: 42px;
+  }
+  .navbarContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbarContents {
+    display: flex;
+  }
+}
