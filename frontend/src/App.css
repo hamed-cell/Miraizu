@@ -117,7 +117,7 @@ h3 {
 }
 
 .logo {
-  width: 90px;
+  width: 130px;
 }
 
 .paper {
@@ -237,4 +237,15 @@ p {
   .containerTitleIllu {
     flex-direction: column;
   }
+}
+
+.peopleContent {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.people {
+  width: 60%;
+  border-radius: 10px;
 }

@@ -7,6 +7,7 @@ import CompanyDetails from "./components/CompanyDetails";
 import Formulaire from "./pages/Contact/Formulaire";
 import Inscription from "./pages/inscription/Inscription.jsx";
 import AdressMap from "./pages/map/AdressMap";
+import Connexion from "./pages/connexion/Connexion.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/map",
         element: <AdressMap />,
+      },
+      {
+        path: "/connexion",
+        element: <Connexion />,
       },
     ],
   },

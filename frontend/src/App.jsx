@@ -6,6 +6,7 @@ import Illustration from "./assets/illustration.png";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Logo from "./assets/logo.png";
+import People from "./assets/people1.png";
 import "./App.css";
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
   const isHidingContent = ["/map"].includes(location.pathname) === true;
   return (
     <div className="container">
-
       {isHidingContent === false && (
         <header className="app-bar">
           <Link to="/">
@@ -36,9 +36,11 @@ function App() {
           <div className="containerIllustrationMain">
             <img className="illustrationMain" src={Illustration} alt="" />
           </div>
-
         </div>
       )}
+      <div className="peopleContent">
+        <img className="people" src={People} alt="" />
+      </div>
       {isHidingContent === false && (
         <main>
           <Outlet />
