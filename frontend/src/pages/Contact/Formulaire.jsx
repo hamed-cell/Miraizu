@@ -1,6 +1,6 @@
 import { Form } from "react-router-dom";
 import { useState } from "react";
-import styles from "./formulaire.css";
+import styles from "./formulaire.module.css";
 import Location from "../../assets/location.png";
 import Phone from "../../assets/phone.png";
 import Email from "../../assets/mail.png";
@@ -30,21 +30,23 @@ export default function Formulaire() {
 
   return (
     <div>
-      <div>
-        <p>Informations de contact</p>
+      <div className={styles.formulaireContact}>
+        <h3>Informations de contact</h3>
         <p>
           Vous êtes un professsionnel et vous souhaitez appraitre sur notre sute
           ?
         </p>
-        <img src={Phone} alt="" />
+        <img src={Phone} alt="phone logo" />
         <p>+10123456 789</p>
-        <img src={Email} alt="" />
+        <img src={Email} alt="email logo" />
         <p>miraizu@gmail.com</p>
-        <img src={Location} alt="" />
+        <img src={Location} alt="location logo" />
         <p>132 dartmouth street Boston,Massachusetts 02156 United States</p>
-        <img src={Twitter} alt="" />
-        <img src={Instagram} alt="" />
-        <img src={Discord} alt="" />
+        <div className={styles.imageContainer}>
+          <img src={Twitter} alt="twitter logo" />
+          <img src={Instagram} alt="instagram logo" />
+          <img src={Discord} alt="discord logo" />
+        </div>
       </div>
 
       <Form
@@ -114,9 +116,11 @@ export default function Formulaire() {
             onChange={handleInput}
           />
         </div>
-        <button className={styles.buttonSubmit} type="submit">
-          <p className={styles.inscriptionButton}>Envoyer votre message</p>
-        </button>
+        <div className={styles.contactButton}>
+          <button className={styles.buttonSubmit} type="submit">
+            <p className={styles.inscriptionButton}>Envoyer votre message</p>
+          </button>
+        </div>
       </Form>
     </div>
   );
