@@ -23,6 +23,7 @@ h2 {
 h3 {
   color: grey;
   font-weight: 100;
+  font-size: 15px;
 }
 .containerTitleIllu {
   display: flex;
@@ -39,9 +40,15 @@ h3 {
 }
 
 .logoEntreprise {
-  width: 5%;
+  width: 100px;
 }
 
+.nameDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-left: 20px;
+}
 .containerIllustrationMain {
   height: 350px;
   display: flex;
@@ -63,17 +70,46 @@ h3 {
   transition: background-color 0.3s;
   width: 100px;
 }
+.buttonIt {
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  width: 100px;
+}
+
 .app-bar {
+  display: flex;
   background-color: white;
-  height: 80px;
+  height: 165px;
   align-items: center;
   padding: 20px 30px 20px 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .app-bar a {
   color: white;
   text-decoration: none;
   font-size: 24px;
+}
+
+.app-bar ul {
+  list-style: none;
+}
+
+.app-bar li {
+  text-align: center;
+  color: black;
+  font-size: 65%;
+}
+
+.app-bar button {
+  text-align: center;
+  margin: 1rem;
 }
 
 .search-bar {
@@ -86,10 +122,38 @@ h3 {
 
 .paper {
   background-color: white;
+
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blogLogoEntreprise {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+}
+
+.scoreMoyen {
+  text-align: center;
+  color: #0fe3ce;
+  font-weight: bold;
+}
+
+.itineraire {
+  text-align: center;
+  margin-left: 40px;
+}
+
+p {
+  margin: 0;
+}
+
+.itineraireImg {
+  width: 50px;
 }
 
 .button {
@@ -128,6 +192,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .form-control {
