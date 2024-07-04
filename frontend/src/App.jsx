@@ -17,7 +17,7 @@ function App() {
         <div className="textTitle">
           <h1>LES ENTREPRISES</h1>
           <h2>Notées sur l’inclusion</h2>
-          <h3>Trouve ta Safeplace</h3>
+          <h3>Trouve ta Safeplace ou mets un commentaire</h3>
           <button className="buttonInsc" type="button">
             S'inscrire
           </button>
